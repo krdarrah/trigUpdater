@@ -23,7 +23,7 @@ function setup() {
 
   chooseBinFileText = createElement('h4', 'Select BIN File from your Computer');
   chooseBinFileText.position(15, 60);
-  latestBinFileButton = createButton('Can Download Latest BIN File HERE');
+  latestBinFileButton = createButton('Get Latest Here');
   latestBinFileButton.position(chooseBinFileText.x + chooseBinFileText.size().width+5, chooseBinFileText.y+chooseBinFileText.size().height+2);
   latestBinFileButton.mousePressed(latestBinFileButtonFunction);
 
@@ -62,16 +62,23 @@ function draw() {
 }
 
 function handleFile(file) {
-  console.log(file.subtype);
-  if(file.subtype != 'macbinary'){
+  console.log(file.name);
+  // if(file.subtype != 'macbinary'){
+  //   alert("Wrong File Type!  Must be a .bin file");
+  //   return;
+  // }
+
+  if (match(file.name, ".bin") == null){
     alert("Wrong File Type!  Must be a .bin file");
     return;
   }
+
   binFileData = file;
   binPath = document.getElementById("binFileInputID").files[0].path;
   //document.getElementById("statusTextID").innerHTML = "Loaded " + binPath;
   startButton.show();
 }
+
 
 function startOTA(){
 
