@@ -2,7 +2,7 @@
 const { app, BrowserWindow } = require('electron')
 
 // Live reload module which watches `public` folder
-// const _ = require('electron-reload')(__dirname + '/public')
+const _ = require('electron-reload')(__dirname + '/public')
 
 const path = require('path')
 const url = require('url')
@@ -16,11 +16,11 @@ function createWindow() {
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 500,
+        height: 350,
         // center: true,
         // frame: false, 
-        // resizable: false,
+         resizable: false,
         // alwaysOnTop: true,
         useContentSize: true // when false, width/height will set the size of the whole app, including frames. If true, innerWindow will be set instead, resulting in a bigger app window
     })
@@ -33,7 +33,7 @@ function createWindow() {
     }))
 
     // Open the DevTools on start
-    // mainWindow.webContents.openDevTools("undock")
+     //mainWindow.webContents.openDevTools("undock")
 
     // Emitted when the window is closed
     mainWindow.on('closed', function() {

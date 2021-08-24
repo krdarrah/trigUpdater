@@ -1,13 +1,17 @@
 {
-    "name": "electron-p5js-template",
+    "name": "trigUpdater",
     "version": "1.0.0",
-    "description": "A minimal Electron application running a p5.js sketch",
+    "description": "App to Easily Update trigBoard FW",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
         "pack": "build --dir",
         "dist": "build",
         "postinstall": "install-app-deps"
+    },
+    "dependencies": {
+        "chokidar": "^3.5.2",
+        "esp-ota": "^1.1.3"
     },
     "repository": "https://github.com/garciadelcastillo/electron-p5js-quick-start",
     "keywords": [
@@ -21,8 +25,10 @@
     "author": "Jose Luis Garcia del Castillo",
     "license": "tbd",
     "devDependencies": {
-        "electron": "^1.4.1",
-        "electron-builder": "20.2.0",
-        "electron-reload": "^1.2.2"
+        "electron": "^1.8.8",
+        "electron-builder": "^20.44.4",
+        "electron-rebuild": "^3.2.0",
+        "electron-reload": "^1.5.0",
+        "electron-reloader": "^1.2.1"
     }
 }
